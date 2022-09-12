@@ -1,9 +1,9 @@
 #include <ESP8266WiFi.h>
 #include <time.h>
 #include "CronAlarms.h"
-const char* ssid = "Janssen"; 
-const char* password = "wtawhY7xdjaa"; 
-const char* getHost = "192.168.178.100"; 
+const char* ssid = "ssid"; 
+const char* password = "wachtwoord"; 
+const char* getHost = "ip adres"; 
 const int httpGetPort = 80;
 String getReceiverURL = "/received.php";
 const unsigned int MAX_MESSAGE_LENGTH = 52;
@@ -102,7 +102,7 @@ void postData() {
 		clientGet.print("Host: ");
 		clientGet.println(getHost);
 		clientGet.println("User-Agent: ESP8266/1.0");
-		clientGet.println("Authorization: Basic c21hcnRtZXRlcjprbm9lcGll=");
+		clientGet.println("Authorization: Basic code=");
 		clientGet.println("Connection: close\r\n\r\n");
 		unsigned long timeoutP = millis();
 		while (clientGet.available() == 0) {
